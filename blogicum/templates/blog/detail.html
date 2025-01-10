@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-  {{ posts.location }} {{ posts.date }}
+  {{ post.location }} {{ post.date }}
 {% endblock %}
 {% block content %}
 <main>
@@ -9,17 +9,17 @@
     <article>
       <ul>
         <li>
-          {{ posts.location }}             
+          {{ post.location }}             
         </li>
         <li>
-          {{ posts.date }}
+          {{ post.date }}
         </li>
         <li>
-          Категория: <a href="/category/{{ posts.category }}">{{ posts.category }}</a>
+          Категория: <a href="/category/{{ post.category }}">{{ post.category }}</a>
         </li>
       </ul>         
       <p>
-        {{ posts.text|linebreaksbr }}
+        {{ post.text|linebreaksbr }}
       </p>          
     </article>                
   </div>

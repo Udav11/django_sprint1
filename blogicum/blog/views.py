@@ -46,15 +46,13 @@ posts = [
 
 def index(request):
     template = 'blog/index.html'
-    context = {'posts': posts}
+    context = {'post': posts}
     return render(request, template, context)
 
 
-def post_detail(request, pk):
+def post_detail(request, id):
     template = 'blog/detail.html'
-    context = {'posts': posts[pk]}
-    if posts is None:
-        raise Http404('f')
+    context = {'post': posts[id]}
     return render(request, template, context)
 
 
