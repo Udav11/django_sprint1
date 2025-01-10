@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  {{ posts.location }} {{ posts.date }}
+{% endblock %}
+{% block content %}
+<main>
+  <div class="container py-5">
+    <article>
+      <ul>
+        <li>
+          {{ posts.location }}             
+        </li>
+        <li>
+          {{ posts.date }}
+        </li>
+        <li>
+          Категория: <a href="/category/{{ posts.category }}">{{ posts.category }}</a>
+        </li>
+      </ul>         
+      <p>
+        {{ posts.text }}
+      </p>          
+    </article>                
+  </div>
+</main>
+{% endblock %}
