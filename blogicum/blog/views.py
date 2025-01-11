@@ -42,20 +42,16 @@ posts = [
     },
 ]
 
+post = {'num': 1}
+
 
 def index(request):
-    template = 'blog/index.html'
-    context = {'post': posts[::-1]}
-    return render(request, template, context)
+    return render(request, template_name='blog/index.html', context={'post': reversed(posts)})
 
 
-def post_detail(request, id):
-    template = 'blog/detail.html'
-    context = {'post': posts[id]}
-    return render(request, template, context)
+def post_detail(request, num):
+    return render(request, template_name='blog/detail.html', context={'post': post[num]})
 
 
 def category_posts(request, category_slug):
-    template = 'blog/category.html'
-    context = {'category_slug': category_slug}
-    return render(request, template, context)
+    return render(request, template_name='blog/category.html', context={'category_slug': category_slug})
