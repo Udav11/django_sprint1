@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 def about(request):
-    return render(request, 'about/about.html')
+    return render(request, 'pages/about.html')
 
 
 def rules(request):
-    return render(request, 'about/rules.html')
+    return render(request, 'pages/rules.html')
