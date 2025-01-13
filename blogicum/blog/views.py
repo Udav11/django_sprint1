@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404
+
 posts = [
     {
         'id': 0,
@@ -43,7 +44,7 @@ posts = [
     },
 ]
 
-post = {post['id']: post for post in posts}
+post_for_id = {post['id']: post for post in posts}
 
 
 def index(request):
@@ -52,7 +53,7 @@ def index(request):
 
 def post_detail(request, post_id):
     try:
-        context = {'post': post[post_id]}
+        context = {'post': post_for_id[post_id]}
     except Exception:
         raise Http404()
     return render(request, 'blog/detail.html', context)

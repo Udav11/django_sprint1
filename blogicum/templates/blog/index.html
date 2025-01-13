@@ -3,6 +3,7 @@
   Лента записей
 {% endblock %}
 {% block content %}
+<main>
     <h1>Лента записей</h1>                        
     <!-- Перебираем в цикле все посты -->
     {% for dict in post %}
@@ -29,4 +30,5 @@
     {% empty %}
       <p>словарь пуст</p>
     {% endfor %}
+</main>
 {% endblock %}
